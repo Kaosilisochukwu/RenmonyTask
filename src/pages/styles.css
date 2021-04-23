@@ -1,0 +1,93 @@
+.container {
+  background-color: rgba(0, 0, 0, 0.47);
+  width: 100%;
+  height: 100vh;
+}
+.onboarding-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.form-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 234, 234);
+  padding: 10px 20px;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 11px 0px #000000;
+}
+
+.form-container::-webkit-scrollbar,
+.onboarding::-webkit-scrollbar {
+  display: none;
+}
+
+.form-container,
+.onboarding {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.input-parent {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+input,
+select {
+  border: 1px solid black;
+}
+.onboarding {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 234, 234);
+  padding: 10px 10%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 11px 0px #000000;
+  overflow: scroll;
+}
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 30px 0px;
+  box-shadow: 0px 0px 11px 0px #000000;
+}
+h2,
+p {
+  text-align: center;
+}
+img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-container,
+  .onboarding {
+    height: 620px;
+    width: 384px;
+    padding: 10px;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
