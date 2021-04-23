@@ -78,6 +78,7 @@ img {
     height: 620px;
     width: 384px;
     padding: 10px;
+    overflow: scroll;
   }
 }
 

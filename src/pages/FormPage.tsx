@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { StateInfo } from "../data/stateInfo";
 import "./styles.css";
 import EligibilityCheck from "../components/EligibilityCheck";
 import EmploymentDetails from "../components/EmploymentDetails";
@@ -9,15 +10,9 @@ import { useHistory } from "react-router-dom";
 const FormPage = () => {
   const history = useHistory();
   const [page, setPage] = useState(1);
-  const [stateDetails, setStateDetails] = useState<any>([]);
   const [userDetails, setUserDetails] = useState<UserDetails>(
     new UserDetails()
   );
-  useEffect(() => {
-    fetch("http://locationsng-api.herokuapp.com/api/v1/lgas")
-      .then((res) => res.json())
-      .then((data) => setStateDetails(data));
-  }, []);
   const makeApiCall = (): void => {
     let info;
     fetch("https://jsonplaceholder.typicode.com/todos/1", {
@@ -37,7 +32,6 @@ const FormPage = () => {
     switch (page) {
       case 1:
         setUserDetails({ ...userDetails, eligibilityDetails: data });
-        console.log(data);
         setPage(2);
         break;
       case 2:
@@ -60,7 +54,7 @@ const FormPage = () => {
     <>
       {page === 1 && (
         <EligibilityCheck
-          stateDetails={stateDetails}
+          stateDetails={StateInfo}
           changePage={handlePageChange}
         />
       )}
